@@ -11,7 +11,8 @@ import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
 
 @Dao
-public interface NotesDao {
+public interface
+NotesDao {
 
     @Query("SELECT * FROM notes")
     Single<List<Note>> getNotes();

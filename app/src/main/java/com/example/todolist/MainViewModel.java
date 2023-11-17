@@ -23,7 +23,7 @@ public class MainViewModel extends AndroidViewModel {
 
     private NotesDao notesDao;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
-    MutableLiveData<List<Note>> notes = new MutableLiveData<>();
+    private MutableLiveData<List<Note>> notes = new MutableLiveData<>();
 
     public MainViewModel(@NonNull Application application) {
         super(application);
@@ -32,7 +32,7 @@ public class MainViewModel extends AndroidViewModel {
 
     public LiveData<List<Note>> getNotes(){
         return notes;
-//        return notesDao.getNotes();
+//      return notesDao.getNotes();
     }
 
     public void refreshList() {

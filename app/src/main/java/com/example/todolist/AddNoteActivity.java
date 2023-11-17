@@ -60,9 +60,9 @@ public class AddNoteActivity extends AppCompatActivity {
 
     private int getPriority() {
         int priority;
-        if (radioButtonLow.isActivated()) {
+        if (radioButtonLow.isChecked()) {
             priority = 0;
-        } else if (radioButtonMedium.isActivated()) {
+        } else if (radioButtonMedium.isChecked()) {
             priority = 1;
         } else {
             priority = 2;
@@ -75,7 +75,6 @@ public class AddNoteActivity extends AppCompatActivity {
         radioButtonLow = findViewById(R.id.radioButtonLow);
         radioButtonMedium = findViewById(R.id.radioButtonMedium);
         buttonSave = findViewById(R.id.buttonSave);
-
     }
 
     public static Intent newIntent(Context context) {

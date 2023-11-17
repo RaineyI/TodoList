@@ -71,6 +71,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         }
     }
 
+
     interface OnNoteClickListener {
         void onNoteClick(Note note);
     }

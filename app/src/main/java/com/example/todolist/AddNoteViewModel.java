@@ -23,14 +23,16 @@ public class AddNoteViewModel extends AndroidViewModel {
     private MutableLiveData<Boolean> shouldCloseScreen = new MutableLiveData<>();
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
-    public LiveData<Boolean> getShouldCloseScreen() {
-        return shouldCloseScreen;
-    }
 
     public AddNoteViewModel(@NonNull Application application) {
         super(application);
         notesDao = NoteDatabase.getInstance(application).notesDao();
     }
+
+    public LiveData<Boolean> getShouldCloseScreen() {
+        return shouldCloseScreen;
+    }
+
 
     public void saveNote(Note note) {
         Disposable disposable = notesDao.add(note)
@@ -44,7 +46,7 @@ public class AddNoteViewModel extends AndroidViewModel {
                 });
         compositeDisposable.add(disposable);
     }
-
+ 
     @Override
     protected void onCleared() {
         super.onCleared();
