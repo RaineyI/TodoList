@@ -15,9 +15,7 @@ public interface
 NotesDao {
 
     @Query("SELECT * FROM notes")
-    Single<List<Note>> getNotes();
-//    LiveData<List<Note>> getNotes();
-
+    LiveData<List<Note>> getNotes();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     Completable add(Note note);
